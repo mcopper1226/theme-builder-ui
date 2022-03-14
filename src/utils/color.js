@@ -23,7 +23,7 @@ const colorMethods = {
     const hsl = {};
     const rgb = this.rgbObjectFromHex(hex);
 
-    // eslint-disable-next-line no-unused-expressions
+    // eslint-disable-next-line no-unused-expressions, no-sequences
     (rgb.r /= 255), (rgb.g /= 255), (rgb.b /= 255);
     let max = Math.max(rgb.r, rgb.g, rgb.b);
     let min = Math.min(rgb.r, rgb.g, rgb.b);

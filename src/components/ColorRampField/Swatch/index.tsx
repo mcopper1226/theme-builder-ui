@@ -29,12 +29,13 @@ const SwatchForm: FC<SwatchFormProps> = ({ rootName, rampIdx, colorIdx }) => {
   const hsl = values[rootName][rampIdx].colors[colorIdx].hsl;
 
   // @ts-ignore
-  const hex = values[rootName][rampIdx].colors[colorIdx].hex;
+  // const hex = values[rootName][rampIdx].colors[colorIdx].hex;
 
   useEffect(() => {
     if (isLoaded) {
       setFieldValue(`${rootName}.${rampIdx}.colors.${colorIdx}.hex`, colorMethods.hslToHex(...hsl));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hsl]);
 
   useEffect(() => {

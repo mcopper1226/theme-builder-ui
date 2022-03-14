@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { useSpring, animated } from '@react-spring/web';
+import { animated } from '@react-spring/web';
 import styles from './A11ySwatches.module.scss';
-import { useFormikContext, Field } from 'formik';
+import { Field } from 'formik';
 import colorMethods from '../../../utils/color';
 
 export interface A11ySwatchesProps {
