@@ -1,13 +1,12 @@
 import { FC } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import ColorRampField from '../../../components/ColorRampField';
-import { Formik, Form, FieldArray, Field } from 'formik';
-import colorMethods from '../../../utils/color';
+import { Formik, Form, FieldArray } from 'formik';
 
 export interface SingleProps {}
 
 export const Single: FC<SingleProps> = (props) => {
-  const { id } = useParams();
+  // const { id } = useParams();
   return (
     <div>
       <h1>Color Ramps</h1>

@@ -45,7 +45,7 @@ const generateColors = (color: Record<string, any>, callback: any, pos: number) 
 export const ColorRampField: FC<ColorRampFieldProps> = ({ rootName, rampIdx, removeRamp, addRamp }) => {
   const [showTextContrast, setShowTextContrast] = useState(false);
   const [showUiContrast, setShowUiContrast] = useState(false);
-  const { values, submitForm, setFieldValue } = useFormikContext();
+  const { values, setFieldValue } = useFormikContext();
 
   // @ts-ignore
   const rampColors = values[rootName][rampIdx].colors;
