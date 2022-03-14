@@ -1,0 +1,39 @@
+.a11ySwatches {
+  &__swatch {
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: white;
+    position: relative;
+    margin: 10px;
+  }
+}
+.formControl__radio--hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+.formControl__radio--hidden ~ label {
+  font-size: 14px;
+  position: relative;
+}
+
+.formControl__radio--hidden:checked ~ label {
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.formControl__radio--hidden ~ label:after {
+  content: '';
+  background: green;
+  position: absolute;
+  right: -25px;
+  top: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+}
+
+.formControl__radio--hidden:disabled ~ label:after {
+  background: red;
+}

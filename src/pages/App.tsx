@@ -8,12 +8,14 @@ import Single from './Dynamic/Single';
 function App() {
   return (
     <div className='App'>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='about' element={<About />} />
-        <Route path='dynamic' element={<Dynamic />} />
-        <Route path='dynamic/:id' element={<Single />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='about' element={<About />} />
+          <Route path='dynamic' element={<Dynamic />} />
+          <Route path='dynamic/:id' element={<Single />} />
+        </Routes>
+      </main>
     </div>
   );
 }

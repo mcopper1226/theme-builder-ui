@@ -1,0 +1,70 @@
+:root {
+  --swatch-height: 400px;
+  --border-radius: 4px;
+  --swatch-margin: 10px;
+  --clickZone-size: 20px;
+}
+.name {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 900;
+  margin-left: var(--swatch-margin);
+  color: #747474;
+}
+.swatch {
+  margin: 0 calc(var(--clickZone-size) + var(--swatch-margin));
+  position: relative;
+  padding: var(--clickZone-size) 0;
+  &__clickZone {
+    position: absolute;
+    background: transparent;
+    top: 0;
+    bottom: 0;
+    left: calc(-1 * var(--clickZone-size));
+    border-radius: 4px;
+    right: calc(-1 * var(--clickZone-size));
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+    &:after {
+      content: '';
+      border: 1px dashed #c9c9c9;
+      border-radius: 4px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      transition: all 0.2s ease-in-out;
+    }
+    &:hover {
+      background: #f7f7f7;
+      cursor: pointer;
+      &:after {
+        border: 1px dashed black;
+      }
+    }
+  }
+  &__colorZone {
+    height: var(--swatch-height);
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+  }
+
+  .form {
+    --form-color: #000000;
+    overflow: hidden;
+    &__inner {
+      margin: 10px;
+    }
+  }
+  &--light {
+    .form {
+      --form-color: #ffffff;
+    }
+  }
+}

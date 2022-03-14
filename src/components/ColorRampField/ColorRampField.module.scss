@@ -1,0 +1,45 @@
+.ramp {
+  margin: 40px auto;
+  padding: 40px 0 20px;
+  border-top: 1px solid black;
+
+  overflow: hidden;
+  &:last-of-type {
+    border-bottom: 1px solid black;
+    padding-bottom: 40px;
+  }
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    --form-color: #000000;
+    &__secondary {
+      display: flex;
+    }
+  }
+  &__window {
+    display: flex;
+    overflow-x: scroll;
+    margin-left: -10px;
+    margin-right: -10px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    button {
+      margin-right: 10px;
+      background: #0381a1;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+      font-weight: 900;
+    }
+  }
+}
