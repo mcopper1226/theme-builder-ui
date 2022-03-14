@@ -109,6 +109,7 @@ export const Swatch: FC<SwatchProps> = ({
     if (colors && colorMethods.contrast(colors[colorIdx].rgb, [255, 255, 255], 4.5)) {
       setFormColor('#ffffff');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { swatchWidth, formWidth, opacity } = useSpring({
