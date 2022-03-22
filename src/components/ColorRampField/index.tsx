@@ -91,6 +91,7 @@ export const ColorRampField: FC<ColorRampFieldProps> = ({ rootName, rampIdx, rem
               colors={rampColors}
               showTextContrast={showTextContrast}
               showUiContrast={showUiContrast}
+              hexDisabled={rampColors.length > 1}
             />
           ))}
       </div>

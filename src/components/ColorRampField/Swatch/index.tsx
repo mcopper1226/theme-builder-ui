@@ -13,15 +13,17 @@ export interface SwatchProps {
   rootName: string;
   rampIdx: number;
   colorIdx: number;
+  hexDisabled: boolean;
 }
 
 interface SwatchFormProps {
   rootName: string;
   rampIdx: number;
   colorIdx: number;
+  hexDisabled: boolean;
 }
 
-const SwatchForm: FC<SwatchFormProps> = ({ rootName, rampIdx, colorIdx }) => {
+const SwatchForm: FC<SwatchFormProps> = ({ rootName, rampIdx, colorIdx, hexDisabled }) => {
   const { values, setFieldValue } = useFormikContext();
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -50,7 +52,7 @@ const SwatchForm: FC<SwatchFormProps> = ({ rootName, rampIdx, colorIdx }) => {
         <Field
           className='formControl__input'
           type='text'
-          disabled={true}
+          disabled={hexDisabled}
           name={`${rootName}.${rampIdx}.colors.${colorIdx}.hex`}
         />
       </div>
@@ -126,6 +128,7 @@ export const Swatch: FC<SwatchProps> = ({
   rootName,
   colorIdx,
   rampIdx,
+  hexDisabled,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -175,7 +178,7 @@ export const Swatch: FC<SwatchProps> = ({
             >
               <animated.div className={styles.form} style={{ width: formWidth, opacity: opacity }}>
                 <div className={styles.form__inner}>
-                  <SwatchForm rootName={rootName} rampIdx={rampIdx} colorIdx={colorIdx} />
+                  <SwatchForm rootName={rootName} rampIdx={rampIdx} colorIdx={colorIdx} hexDisabled={hexDisabled} />
                 </div>
               </animated.div>
 
