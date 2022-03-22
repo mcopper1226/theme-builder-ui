@@ -24,14 +24,13 @@ export const A11ySwatches: FC<A11ySwatchesProps> = ({ colors, rootName, colorIdx
 
   useEffect(() => {
     if (colors) {
-      // console.log('colors have changed');
-      // @ts-ignore
+      //@ts-ignore
       const updated: any[] = [].concat(colors.slice(0, colorIdx), colors.slice(colorIdx + 1));
       setColorOpts(updated);
       setRgb(colors[colorIdx].rgb);
-      // console.log('rgb', colors[colorIdx].rgb);
-      // console.log('hsl', colors[colorIdx].hsl);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [colors]);
 
   return (
