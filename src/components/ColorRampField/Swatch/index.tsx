@@ -34,6 +34,7 @@ const SwatchForm: FC<SwatchFormProps> = ({ rootName, rampIdx, colorIdx }) => {
   useEffect(() => {
     if (isLoaded) {
       setFieldValue(`${rootName}.${rampIdx}.colors.${colorIdx}.hex`, colorMethods.hslToHex(...hsl));
+      setFieldValue(`${rootName}.${rampIdx}.colors.${colorIdx}.rgb`, colorMethods.hslToRgbArray(...hsl));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hsl]);
@@ -46,7 +47,12 @@ const SwatchForm: FC<SwatchFormProps> = ({ rootName, rampIdx, colorIdx }) => {
     <>
       <div className='formControl'>
         <label className='formControl__label'>Hex</label>
-        <Field className='formControl__input' type='text' name={`${rootName}.${rampIdx}.colors.${colorIdx}.hex`} />
+        <Field
+          className='formControl__input'
+          type='text'
+          disabled={true}
+          name={`${rootName}.${rampIdx}.colors.${colorIdx}.hex`}
+        />
       </div>
       <div className='formControl'>
         <label className='formControl__label'>HSL</label>
@@ -72,6 +78,38 @@ const SwatchForm: FC<SwatchFormProps> = ({ rootName, rampIdx, colorIdx }) => {
               className='formControl__input'
               type='number'
               name={`${rootName}.${rampIdx}.colors.${colorIdx}.hsl[2]`}
+            />
+            <span className='formControl__sublabel'>Light.</span>
+          </div>
+        </div>
+      </div>
+      <div className='formControl'>
+        <label className='formControl__label'>RGB</label>
+        <div className='formControl__flex'>
+          <div className='formControl__flexItem'>
+            <Field
+              disabled={true}
+              className='formControl__input'
+              type='number'
+              name={`${rootName}.${rampIdx}.colors.${colorIdx}.rgb[0]`}
+            />
+            <span className='formControl__sublabel'>Hue</span>
+          </div>
+          <div className='formControl__flexItem'>
+            <Field
+              disabled={true}
+              className='formControl__input'
+              type='number'
+              name={`${rootName}.${rampIdx}.colors.${colorIdx}.rgb[1]`}
+            />
+            <span className='formControl__sublabel'>Sat.</span>
+          </div>
+          <div className='formControl__flexItem'>
+            <Field
+              disabled={true}
+              className='formControl__input'
+              type='number'
+              name={`${rootName}.${rampIdx}.colors.${colorIdx}.rgb[2]`}
             />
             <span className='formControl__sublabel'>Light.</span>
           </div>

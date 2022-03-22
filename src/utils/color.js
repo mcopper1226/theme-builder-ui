@@ -134,6 +134,10 @@ const colorMethods = {
     const rgb = this.hslToRgbObject(h, s, l);
     return `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
   },
+  hslToRgbArray(h, s, l) {
+    const rgb = this.hslToRgbObject(h, s, l);
+    return [rgb.r, rgb.g, rgb.b];
+  },
   hslToHex(h, s, l) {
     const rgb = this.hslToRgbObject(h, s, l);
     return this.rgbToHex(rgb.r, rgb.g, rgb.b);
